@@ -4,10 +4,11 @@
 }
 
 body {
+    /* Changed from pink to a professional light gray */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: pink;
+    background-color: #f4f4f4; /* Very light gray for clean look */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -16,9 +17,11 @@ body {
 
 /* Header & Navbar */
 header {
-    background-color: #111;
+    /* Slightly softer dark color for a professional contrast */
+    background-color: #222; 
     color: white;
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding for more breathing room */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .navbar {
@@ -27,16 +30,16 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px; /* Increased side padding */
 }
 
 .nav-logo a {
     text-decoration: none;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.6em; /* Slightly larger */
     display: flex;
     align-items: center;
-    font-weight: bold;
+    font-weight: 600; /* Bolder font */
 }
 
 .nav-logo img {
@@ -51,98 +54,126 @@ header {
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 25px; /* More space between links */
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
     font-size: 1em;
-    transition: color 0.3s ease;
+    padding: 5px 0; /* Padding for better click area */
+    border-bottom: 2px solid transparent; /* Base for hover effect */
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ddd;
+    color: #00bcd4; /* Accent color for professional hover */
+    border-bottom: 2px solid #00bcd4;
 }
 
 /* Main Layout */
 main {
     flex: 1;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1100px; /* Wider main content area */
+    margin: 60px auto; /* More vertical space */
+    padding: 0 30px;
 }
 
 /* Section Layouts */
 .about-section,
 .jerry-section {
+    /* Modified to a classic two-column layout for a profile */
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px;
+    gap: 60px; /* Increased gap */
+    justify-content: space-around; /* Distribute space */
+    align-items: flex-start; /* Align to the top */
+    margin-bottom: 80px;
+    background-color: #ffffff; /* White background for the section */
+    padding: 40px;
+    border-radius: 8px; /* Subtle rounding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
 }
 
 .about-content,
 .jerry-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 500px;
-    text-align: center;
+    flex-direction: row; /* Allow image and text to be side-by-side */
+    align-items: flex-start; /* Align items to the top of the container */
+    max-width: 900px;
+    text-align: left; /* Text alignment should be left for professional readability */
+    gap: 40px;
 }
 
 .about-text,
 .jerry-text {
-    margin-top: 20px;
-    font-size: 1.1em;
-    line-height: 1.6;
+    margin-top: 0; /* Reset top margin since it's aligned */
+    font-size: 1.05em;
+    line-height: 1.7; /* Increased line height for better readability */
+    max-width: 600px; /* Limit text width */
 }
 
 /* Images */
 .profile-img,
 .jerry-gif {
-    border-radius: 12px;
+    border-radius: 8px; /* Slightly less aggressive rounding */
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
 }
 
 .profile-img {
-    width: 230px;
-    height: 350px;
+    width: 200px; /* Adjusted size */
+    height: 300px;
+    /* Changed to a perfect square for a professional headshot look */
+    border: 3px solid #00bcd4; /* Accent border for emphasis */
+}
+
+/* Adjusted image for responsiveness in two-column layout */
+@media (max-width: 768px) {
+    .about-content,
+    .jerry-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px;
+    }
 }
 
 .jerry-gif {
-    width: 460px;
-    height: 700px;
+    width: 100%; /* Make it responsive */
+    max-width: 400px;
+    height: auto;
 }
 
-/* Login */
+/* Login (Keeping original professional styling) */
 .login-section {
     max-width: 350px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 .login-form label {
-    font-size: 0.95em;
-    font-weight: bold;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 6px;
     font-size: 1em;
 }
@@ -152,43 +183,46 @@ main {
 }
 
 .login-form input[type="submit"] {
-    padding: 10px;
-    background-color: #333;
+    padding: 12px;
+    background-color: #00bcd4; /* Accent color for main CTA */
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 .login-form input[type="submit"]:hover {
-    background-color: #555;
+    background-color: #0097a7; /* Darker shade on hover */
 }
 
 /* Social */
 .connect-section {
     text-align: center;
-    margin: 60px 0;
+    margin: 80px 0; /* More vertical space */
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 40px; /* More space between icons */
+    margin-top: 30px;
 }
 
 .social-icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
+    width: 40px; /* Slightly smaller, standard size */
+    height: 40px;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .social-icon:hover {
     transform: scale(1.1);
+    opacity: 1;
 }
 
-/* Rain effect */
+/* Rain effect (No change, as this is a custom effect) */
 .jerry-page #rainCanvas {
     position: fixed;
     top: 0;
@@ -213,19 +247,20 @@ main {
 
 /* Footer */
 footer {
-    background-color: #111;
+    background-color: #222; /* Matches header */
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0; /* More padding */
     font-size: 0.9em;
 }
 
 footer a {
-    color: #ddd;
+    color: #00bcd4; /* Accent color for links */
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
+    color: #fff;
     text-decoration: underline;
 }
-
