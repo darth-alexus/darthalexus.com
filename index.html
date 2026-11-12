@@ -3,82 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>darthalexus.com</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Alexander Neuhauser · DarthAlexus</title>
+    <meta name="description" content="Alexander Neuhauser — AI research scientist and PhD student at JKU Linz. Real-time score following, reinforcement learning and robotic piano performance.">
+    <meta name="theme-color" content="#07050a">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/synth.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-logo">
-                <a href="http://darthalexus.com">
-                    <!--<img src="home.png" alt="Home" height="25" width="25">-->
-                    DarthAlexus
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="http://darthalexus.com">Home</a></li>
-                <!--<li><a href="about.html">About</a></li>-->
-                <li><a href="pianist/index.html">Full-body RoboPianist</a></li>
-                <!--<li><a href="jerry.html">Jerry</a></li>--<
-                <!--<li><a href="#connect">Connect</a></li>
-                <li><a href="#contact">Contact</a></li>-->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Main">
+            <a class="brand" href="#top" aria-label="DarthAlexus, back to top">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-text">DARTH<span class="accent">ALEXUS</span></span>
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span class="sr-only">Menu</span>
+                <span class="bar"></span><span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#plant-based">Plant-Based</a></li>
+                <li><a href="#jerry">Jerry</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main>
-        <section id="about" class="about-section">
-            <div class="about-content">
-                <img src="jerry.png" alt="Profile Picture" class="profile-img">
-                <div class="about-text">
-                    <h3>Hi, I'm Darth Alexus.</h3>
-                    <!--<h3>My name is DarthAlexus.</h3>-->
-                    <p>And this is where my projects live.</p>
-                    <h6> This site is currently under construction.<br>
-                        Will there ever be a real website?<br>
-                        Nobody knows. </h6>
 
-                    <!--<p>
-                      This site is currently under construction.<br>
-                      <br>
-                      Will there ever be a real website?
-                    </p>
-                      Nobody knows.-->
-                    <!--Who knows if there will ever be a real website?
-                    </p>
-                      Nobody does. But then again: Nobody cares.
-                    <p>
-                      This is mainly just a little <b>joke project</b> of mine.<br>
-                      It's whole purpose - for now - is providing me with a platform <br>
-                      to experiment around with some simple web programming stuff.
-                    </p>-->
+    <main id="main">
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="top">
+            <div class="hero-sky" aria-hidden="true">
+                <div class="stars"></div>
+                <div class="sun"></div>
+                <img class="hero-jerry" src="assets/img/jerry-silhouette.png" alt="" width="342" height="520">
+                <div class="grid-floor"><div class="grid-lines"></div></div>
+            </div>
+
+            <div class="hero-inner">
+                <p class="eyebrow mono"><span class="blink" aria-hidden="true"></span>SYS://NEUHAUSER.A — ONLINE</p>
+                <h1 class="hero-title">
+                    <span class="line">Alexander</span>
+                    <span class="line chrome">Neuhauser</span>
+                </h1>
+                <p class="hero-roles mono">
+                    <span>AI Research Scientist</span><span class="sep">/</span>
+                    <span>PhD Student @ JKU Linz</span>
+                </p>
+                <p class="hero-lede">
+                    I teach machines to <em>listen</em>, <em>follow</em> and <em>play</em> music:
+                    real-time score following, deep reinforcement learning and a full-body humanoid
+                    robot that learns to play the piano.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#research">View research</a>
+                    <a class="btn btn-ghost" href="pianist/index.html">Watch the RoboPianist →</a>
+                </div>
+            </div>
+
+            <div class="hud mono" aria-hidden="true">
+                <div class="hud-row"><span>LOC</span><span>VIENNA · LINZ / AT</span></div>
+                <div class="hud-row"><span>FOCUS</span><span>RL · MIR · ROBOTICS</span></div>
+                <div class="hud-row"><span>BPM</span><span class="hud-bpm">120</span></div>
+                <div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section" id="about">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index mono">01</span>
+                    <h2>About</h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead">
+                            I'm a research scientist and PhD student at
+                            <strong>Johannes Kepler University Linz</strong>, based in Vienna.
+                            My work sits where machine learning meets music and robotics.
+                        </p>
+                        <p>
+                            I studied Technical Physics at <strong>TU Wien</strong> before switching to an
+                            MSc in Artificial Intelligence at JKU. My master's thesis,
+                            <a href="https://epub.jku.at/obvulihs/download/pdf/12742599" target="_blank" rel="noopener"><em>Difficulty Estimation and Robotic Piano Performance via Reinforcement Learning</em></a>,
+                            put a humanoid robot in front of a piano. Today I mostly work on
+                            <strong>real-time score following</strong>: getting a computer to know, at every
+                            moment, where a live musician is in the score.
+                        </p>
+                        <p>
+                            I've also taught Deep Learning &amp; Neural Networks as a teaching assistant at JKU,
+                            tutored mathematics for several years, and coordinate the
+                            <a href="#plant-based">Plant-Based Universities</a> campaign at JKU Linz.
+                        </p>
+
+                        <ul class="skill-chips mono" aria-label="Skills">
+                            <li>Deep Reinforcement Learning</li>
+                            <li>Deep Learning</li>
+                            <li>Music Information Retrieval</li>
+                            <li>Score Following</li>
+                            <li>MuJoCo / Robotics</li>
+                            <li>Python</li>
+                            <li>PyTorch</li>
+                            <li>C++</li>
+                            <li>Physics</li>
+                        </ul>
+                    </div>
+
+                    <ol class="timeline" aria-label="Experience and education">
+                        <li class="tl-item is-now">
+                            <span class="tl-date mono">2025 — now</span>
+                            <h3>Research Scientist &amp; PhD Student</h3>
+                            <p>Johannes Kepler University Linz · Deep RL, music alignment</p>
+                        </li>
+                        <li class="tl-item is-now">
+                            <span class="tl-date mono">2026 — now</span>
+                            <h3>JKU Linz Campaign Coordinator</h3>
+                            <p>Plant-Based Universities · Linz</p>
+                        </li>
+                        <li class="tl-item">
+                            <span class="tl-date mono">2023 — 2025</span>
+                            <h3>Student &amp; Teaching Assistant</h3>
+                            <p>JKU Linz · Deep Learning and Neural Networks 1 &amp; 2</p>
+                        </li>
+                        <li class="tl-item">
+                            <span class="tl-date mono">2022 — 2025</span>
+                            <h3>Mathematics Tutor</h3>
+                            <p>Preply · Freelance</p>
+                        </li>
+                        <li class="tl-item edu">
+                            <span class="tl-date mono">2022 — 2025</span>
+                            <h3>MSc Artificial Intelligence</h3>
+                            <p>Johannes Kepler University Linz</p>
+                        </li>
+                        <li class="tl-item edu">
+                            <span class="tl-date mono">2015 — 2021</span>
+                            <h3>BSc Technical Physics</h3>
+                            <p>Technische Universität Wien</p>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </section>
-        
-        <section id="connect" class="connect-section">
-            <div class="social-links">
-                
-                <!--<a href="http://open.spotify.com/user/1132953857" target="_blank">
-                    <img src="spotify_logo.png" alt="Spotify" class="social-icon">
-                </a>-->
-                <a href="http://github.com/darth-alexus" target="_blank">
-                    <img src="github.png" alt="GitHub" class="social-icon">
-                </a>
-                <!--<a href="https://www.sololearn.com/Profile/7072030" target="_blank">
-                    <img src="sololearn.png" alt="SoloLearn" class="social-icon">
-                </a>
-                <a href="https://www.deviantart.com/darthalexus" target="_blank">
-                    <img src="deviant.png" alt="DeviantArt" class="social-icon">-->
-                </a>
+
+        <!-- ============ RESEARCH ============ -->
+        <section class="section" id="research">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index mono">02</span>
+                    <h2>Research &amp; Code</h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <p class="section-intro">
+                    Most of what I build is open source, and most of it orbits one question:
+                    <em>how does a machine keep up with a human performer?</em>
+                </p>
+
+                <h3 class="track-title mono"><span class="track-dot"></span>Track A — Real-time score following</h3>
+                <div class="cards">
+                    <article class="card card-feature">
+                        <div class="card-top">
+                            <span class="card-tag mono">Library · contributor</span>
+                            <span class="card-status mono">PyPI</span>
+                        </div>
+                        <h4>matchmaker</h4>
+                        <p>
+                            A Python library for <strong>real-time music alignment</strong>. Offline alignment has
+                            solid public implementations, but online score followers used to be rebuilt from
+                            scratch for every project. Matchmaker provides efficient reference implementations
+                            for audio and MIDI input, ready to drop into apps such as automatic accompaniment
+                            or page turning.
+                        </p>
+                        <pre class="term mono" aria-label="Install command"><span class="prompt">$</span> pip install pymatchmaker</pre>
+                        <ul class="card-meta mono"><li>Python</li><li>Audio + MIDI</li><li>DTW · HMM</li></ul>
+                        <a class="card-link" href="https://github.com/pymatchmaker/matchmaker" target="_blank" rel="noopener">pymatchmaker/matchmaker →</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="card-tag mono">Benchmark · contributor</span>
+                        </div>
+                        <h4>matchmaker_benchmark</h4>
+                        <p>
+                            An open leaderboard for score following. You write one Python file and open a pull request;
+                            CI then evaluates your follower on <strong>146 fixed performances</strong>
+                            (ASAP, Batik, Vienna 4x22) and ranks it by beat error, ms error, tracking rate and
+                            real-time factor. Nobody has to download any data.
+                        </p>
+                        <ul class="card-meta mono"><li>Leaderboard</li><li>GitHub Actions</li></ul>
+                        <a class="card-link" href="https://github.com/pymatchmaker/matchmaker_benchmark" target="_blank" rel="noopener">pymatchmaker/matchmaker_benchmark →</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="card-tag mono">Method · author</span>
+                            <span class="card-status mono soon">public soon</span>
+                        </div>
+                        <h4>rl_follower</h4>
+                        <p>
+                            Score followers learned with <strong>reinforcement learning</strong> (trained with DAgger
+                            against an exact oracle). One model per modality follows any piece without retraining:
+                            an event-based follower for MIDI and a frame-based follower for audio that corrects a tempo-aware
+                            online DTW with a learned residual policy. The audio follower reaches a
+                            <strong>0.938 tracking rate</strong> on the benchmark's eval fold.
+                        </p>
+                        <ul class="card-meta mono"><li>RL · DAgger</li><li>Matchmaker plugin</li></ul>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="card-tag mono">Game · Gym env · author</span>
+                            <span class="card-status mono soon">public soon</span>
+                        </div>
+                        <h4>FollowTheScore</h4>
+                        <p>
+                            A score-following <strong>game</strong> and Gymnasium environment. While a piano performance
+                            plays, a little character hops from note onset to note onset, and the goal is to land
+                            where the pianist actually is. You can play it yourself, race a matchmaker follower, watch an RL agent,
+                            or use it as a coding challenge with a leaderboard.
+                        </p>
+                        <ul class="card-meta mono"><li>pygame</li><li>Gymnasium</li><li>Teaching</li></ul>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="card-tag mono">Bibliography · contributor</span>
+                        </div>
+                        <h4>score-following-bibliography</h4>
+                        <p>
+                            A curated, <strong>verified bibliography</strong> of real-time score following research,
+                            maintained alongside matchmaker and modelled on the OMR Research bibliography. The BibTeX
+                            files come with keyword filters and a generated static site. New papers are found
+                            through Zotero and OpenAlex citations.
+                        </p>
+                        <ul class="card-meta mono"><li>BibTeX</li><li>OpenAlex</li><li>Static site</li></ul>
+                        <a class="card-link" href="https://github.com/pymatchmaker/score-following-bibliography" target="_blank" rel="noopener">pymatchmaker/score-following-bibliography →</a>
+                    </article>
+                </div>
+
+                <h3 class="track-title mono"><span class="track-dot"></span>Track B — Robots at the piano</h3>
+                <div class="cards cards-robot">
+                    <article class="card card-wide">
+                        <div class="card-media">
+                            <video src="pianist/videos/twinkle_twinkle.mp4" poster="assets/img/robopianist-poster.jpg" muted loop playsinline preload="none" aria-label="Full-body humanoid robot playing the piano in simulation"></video>
+                            <span class="media-label mono">SIM // MuJoCo</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-tag mono">Thesis project · author</span>
+                                <span class="card-status mono soon">code public soon</span>
+                            </div>
+                            <h4>Full-body RoboPianist</h4>
+                            <p>
+                                This extends RoboPianist from two floating hands to a <strong>full-body humanoid</strong>.
+                                A Unitree G1 with Shadow Dexterous Hands learns to play piano pieces through deep
+                                reinforcement learning, from <em>Twinkle Twinkle</em> to Bach, Chopin and MGMT. I built the robot model
+                                as the open-source <a href="https://github.com/darth-alexus/humanoid_shadow_g1" target="_blank" rel="noopener">Humanoid Shadow G1</a>
+                                (MuJoCo Menagerie style).
+                            </p>
+                            <ul class="card-meta mono"><li>Deep RL</li><li>MuJoCo</li><li>Humanoid</li></ul>
+                            <div class="card-links">
+                                <a class="card-link" href="pianist/index.html">Watch performances →</a>
+                                <a class="card-link" href="https://github.com/darth-alexus/humanoid_shadow_g1" target="_blank" rel="noopener">humanoid_shadow_g1 →</a>
+                                <a class="card-link" href="https://epub.jku.at/obvulihs/download/pdf/12742599" target="_blank" rel="noopener">Thesis (PDF) →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PLANT-BASED UNIVERSITIES ============ -->
+        <section class="section section-alt" id="plant-based">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index mono">03</span>
+                    <h2>Plant-Based Universities</h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <div class="pbu-grid">
+                    <div class="pbu-text">
+                        <p class="lead">
+                            <span class="quote">“Practice what you teach.”</span>
+                            Universities produce much of the research on food and climate. Their canteens should reflect it.
+                        </p>
+                        <p>
+                            <strong>Plant-Based Universities</strong> is a student-led campaign that started at three UK
+                            universities in 2021. It asks universities to move to <strong>100% plant-based catering</strong>
+                            as a response to the climate and biodiversity crises. It has since spread across Europe.
+                            In Austria, the University of Graz moved to a fully plant-based canteen, and the University of Vienna
+                            committed to 70% plant-based catering.
+                        </p>
+                        <p>
+                            I coordinate the campaign at <strong>JKU Linz</strong>. We work with students, the student union
+                            and campus catering to make plant-based food the default on campus.
+                            If you study or work at JKU and want to get involved, get in touch.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="mailto:admin@darthalexus.com?subject=Plant-Based%20Universities%20JKU">Join us at JKU</a>
+                            <a class="btn btn-ghost" href="https://plantbaseduniversities.org/" target="_blank" rel="noopener">plantbaseduniversities.org ↗</a>
+                        </div>
+                    </div>
+
+                    <aside class="pbu-panel mono" aria-label="Campaign at a glance">
+                        <div class="panel-head"><span class="led"></span>CAMPAIGN STATUS · JKU LINZ</div>
+                        <dl>
+                            <div><dt>ROLE</dt><dd>Campaign coordinator</dd></div>
+                            <div><dt>SINCE</dt><dd>Oct 2026</dd></div>
+                            <div><dt>GOAL</dt><dd>100% plant-based catering</dd></div>
+                            <div><dt>WHY</dt><dd>Climate · Nature · Animals</dd></div>
+                        </dl>
+                        <div class="progress" role="img" aria-label="Campaign in progress">
+                            <span></span>
+                        </div>
+                        <p class="panel-foot">&gt; transition in progress_</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ JERRY ============ -->
+        <section class="section" id="jerry">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index mono">04</span>
+                    <h2>Chief Supervisor</h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <div class="jerry-grid">
+                    <figure class="jerry-frame">
+                        <img src="assets/img/jerry-loop.webp" alt="Jerry, a black cat with a pink collar, lounging on a fluffy blanket" width="360" height="480" loading="lazy">
+                        <figcaption class="mono">JERRY.EXE · 2007 — 2025</figcaption>
+                    </figure>
+                    <div class="jerry-text">
+                        <p class="lead">Meet Jerry, my black cat and longest-serving colleague.</p>
+                        <p>
+                            For eighteen years Jerry supervised every exam, every line of code and every late-night
+                            training run, usually from the warmest spot on the keyboard. That pink collar might
+                            also explain this website's colour scheme.
+                        </p>
+                        <p class="muted">
+                            Jerry passed away in 2025 but still keeps watch over this site. Look closely and you'll find a few traces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="section contact" id="contact">
+            <div class="container contact-inner">
+                <p class="eyebrow mono">// OPEN CHANNEL</p>
+                <h2 class="contact-title">Let's build something<br><span class="chrome">in sync.</span></h2>
+                <p class="section-intro">Research collaborations, score following, robots or plant-based campuses: my inbox is open.</p>
+                <div class="hero-actions center">
+                    <a class="btn btn-primary" href="mailto:admin@darthalexus.com">admin@darthalexus.com</a>
+                    <a class="btn btn-ghost" href="https://github.com/darth-alexus" target="_blank" rel="noopener">GitHub ↗</a>
+                    <a class="btn btn-ghost" href="https://github.com/pymatchmaker" target="_blank" rel="noopener">pymatchmaker ↗</a>
+                </div>
             </div>
         </section>
     </main>
-    
-    <footer id="contact" class="footer">
-        <p>Contact: <a href="mailto:admin@darthalexus.com">admin@darthalexus.com</a></p>
-        <p>&copy; 2025 DarthAlexus. All rights reserved.</p>
+
+    <footer class="site-footer">
+        <div class="container footer-inner mono">
+            <span>&copy; <span id="year">2026</span> Alexander Neuhauser · DarthAlexus</span>
+            <span class="footer-note">Built by hand · supervised by Jerry</span>
+        </div>
+        <img class="footer-jerry" src="assets/img/jerry-silhouette.png" alt="" width="342" height="520" aria-hidden="true">
     </footer>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
