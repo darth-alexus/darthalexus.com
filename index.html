@@ -58,9 +58,8 @@
                     <span>PhD Student @ JKU Linz</span>
                 </p>
                 <p class="hero-lede">
-                    I teach machines to <em>listen</em>, <em>follow</em> and <em>play</em> music:
-                    real-time score following, deep reinforcement learning and a full-body humanoid
-                    robot that learns to play the piano.
+                    I teach machines to <em>listen</em>, <em>follow</em> and <em>play</em> music,
+                    from real-time score following to a humanoid robot at the piano.
                 </p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#research">View research</a>
@@ -71,8 +70,6 @@
             <div class="hud mono" aria-hidden="true">
                 <div class="hud-row"><span>LOC</span><span>VIENNA · LINZ / AT</span></div>
                 <div class="hud-row"><span>FOCUS</span><span>RL · MIR · ROBOTICS</span></div>
-                <div class="hud-row"><span>BPM</span><span class="hud-bpm">120</span></div>
-                <div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             </div>
         </section>
 
@@ -88,22 +85,18 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p class="lead">
-                            I'm a research scientist and PhD student at
-                            <strong>Johannes Kepler University Linz</strong>, based in Vienna.
-                            My work sits where machine learning meets music and robotics.
+                            Research scientist and PhD student at <strong>JKU Linz</strong>, based in Vienna,
+                            working where machine learning meets music and robotics.
                         </p>
                         <p>
-                            I studied Technical Physics at <strong>TU Wien</strong> before switching to an
-                            MSc in Artificial Intelligence at JKU. My master's thesis,
-                            <a href="https://epub.jku.at/obvulihs/download/pdf/12742599" target="_blank" rel="noopener"><em>Difficulty Estimation and Robotic Piano Performance via Reinforcement Learning</em></a>,
-                            put a humanoid robot in front of a piano. Today I mostly work on
-                            <strong>real-time score following</strong>: getting a computer to know, at every
-                            moment, where a live musician is in the score.
+                            I hold a BSc in Technical Physics from <strong>TU Wien</strong> and an MSc in Artificial
+                            Intelligence from <strong>JKU</strong>, where my
+                            <a href="https://epub.jku.at/obvulihs/download/pdf/12742599" target="_blank" rel="noopener">master's thesis</a>
+                            put a humanoid robot at the piano. Today I mostly work on <strong>real-time score following</strong>.
                         </p>
                         <p>
-                            I've also taught Deep Learning &amp; Neural Networks as a teaching assistant at JKU,
-                            tutored mathematics for several years, and coordinate the
-                            <a href="#plant-based">Plant-Based Universities</a> campaign at JKU Linz.
+                            I've also taught Deep Learning at JKU, tutored mathematics, and coordinate
+                            <a href="#plant-based">Plant-Based Universities</a> at JKU Linz.
                         </p>
 
                         <ul class="skill-chips mono" aria-label="Skills">
@@ -165,8 +158,7 @@
                 </header>
 
                 <p class="section-intro">
-                    Most of what I build is open source, and most of it orbits one question:
-                    <em>how does a machine keep up with a human performer?</em>
+                    Most of my work orbits one question: <em>how does a machine keep up with a human performer?</em>
                 </p>
 
                 <h3 class="track-title mono"><span class="track-dot"></span>Track A — Real-time score following</h3>
@@ -178,11 +170,9 @@
                         </div>
                         <h4>matchmaker</h4>
                         <p>
-                            A Python library for <strong>real-time music alignment</strong>. Offline alignment has
-                            solid public implementations, but online score followers used to be rebuilt from
-                            scratch for every project. Matchmaker provides efficient reference implementations
-                            for audio and MIDI input, ready to drop into apps such as automatic accompaniment
-                            or page turning.
+                            A Python library for <strong>real-time music alignment</strong>, with reference
+                            score followers for audio and MIDI that drop straight into applications like
+                            automatic accompaniment or page turning.
                         </p>
                         <pre class="term mono" aria-label="Install command"><span class="prompt">$</span> pip install pymatchmaker</pre>
                         <ul class="card-meta mono"><li>Python</li><li>Audio + MIDI</li><li>DTW · HMM</li></ul>
@@ -195,10 +185,8 @@
                         </div>
                         <h4>matchmaker_benchmark</h4>
                         <p>
-                            An open leaderboard for score following. You write one Python file and open a pull request;
-                            CI then evaluates your follower on <strong>146 fixed performances</strong>
-                            (ASAP, Batik, Vienna 4x22) and ranks it by beat error, ms error, tracking rate and
-                            real-time factor. Nobody has to download any data.
+                            An open leaderboard for score following. Submit one Python file and CI evaluates
+                            your follower on <strong>146 fixed performances</strong>.
                         </p>
                         <ul class="card-meta mono"><li>Leaderboard</li><li>GitHub Actions</li></ul>
                         <a class="card-link" href="https://github.com/pymatchmaker/matchmaker_benchmark" target="_blank" rel="noopener">pymatchmaker/matchmaker_benchmark →</a>
@@ -211,11 +199,9 @@
                         </div>
                         <h4>rl_follower</h4>
                         <p>
-                            Score followers learned with <strong>reinforcement learning</strong> (trained with DAgger
-                            against an exact oracle). One model per modality follows any piece without retraining:
-                            an event-based follower for MIDI and a frame-based follower for audio that corrects a tempo-aware
-                            online DTW with a learned residual policy. The audio follower reaches a
-                            <strong>0.938 tracking rate</strong> on the benchmark's eval fold.
+                            Score followers learned with <strong>reinforcement learning</strong>: one model per
+                            modality (MIDI or audio) follows any piece without retraining, reaching a
+                            <strong>0.938 tracking rate</strong> on audio in the benchmark.
                         </p>
                         <ul class="card-meta mono"><li>RL · DAgger</li><li>Matchmaker plugin</li></ul>
                     </article>
@@ -227,10 +213,8 @@
                         </div>
                         <h4>FollowTheScore</h4>
                         <p>
-                            A score-following <strong>game</strong> and Gymnasium environment. While a piano performance
-                            plays, a little character hops from note onset to note onset, and the goal is to land
-                            where the pianist actually is. You can play it yourself, race a matchmaker follower, watch an RL agent,
-                            or use it as a coding challenge with a leaderboard.
+                            A score-following <strong>game</strong> and Gymnasium environment: hop through the score
+                            along with a piano performance, race a computer follower, or train an RL agent.
                         </p>
                         <ul class="card-meta mono"><li>pygame</li><li>Gymnasium</li><li>Teaching</li></ul>
                     </article>
@@ -242,9 +226,7 @@
                         <h4>score-following-bibliography</h4>
                         <p>
                             A curated, <strong>verified bibliography</strong> of real-time score following research,
-                            maintained alongside matchmaker and modelled on the OMR Research bibliography. The BibTeX
-                            files come with keyword filters and a generated static site. New papers are found
-                            through Zotero and OpenAlex citations.
+                            with keyword filters and a generated static site.
                         </p>
                         <ul class="card-meta mono"><li>BibTeX</li><li>OpenAlex</li><li>Static site</li></ul>
                         <a class="card-link" href="https://github.com/pymatchmaker/score-following-bibliography" target="_blank" rel="noopener">pymatchmaker/score-following-bibliography →</a>
@@ -265,11 +247,10 @@
                             </div>
                             <h4>Full-body RoboPianist</h4>
                             <p>
-                                This extends RoboPianist from two floating hands to a <strong>full-body humanoid</strong>.
-                                A Unitree G1 with Shadow Dexterous Hands learns to play piano pieces through deep
-                                reinforcement learning, from <em>Twinkle Twinkle</em> to Bach, Chopin and MGMT. I built the robot model
-                                as the open-source <a href="https://github.com/darth-alexus/humanoid_shadow_g1" target="_blank" rel="noopener">Humanoid Shadow G1</a>
-                                (MuJoCo Menagerie style).
+                                RoboPianist, extended from two floating hands to a <strong>full-body humanoid</strong>:
+                                a Unitree G1 with Shadow Hands that learns piano pieces through deep reinforcement learning.
+                                The robot model is open source as
+                                <a href="https://github.com/darth-alexus/humanoid_shadow_g1" target="_blank" rel="noopener">Humanoid Shadow G1</a>.
                             </p>
                             <ul class="card-meta mono"><li>Deep RL</li><li>MuJoCo</li><li>Humanoid</li></ul>
                             <div class="card-links">
@@ -296,22 +277,19 @@
                     <div class="pbu-text">
                         <p class="lead">
                             <span class="quote">“Practice what you teach.”</span>
-                            Universities produce much of the research on food and climate. Their canteens should reflect it.
+                            Universities should serve what their climate research recommends.
                         </p>
                         <p>
-                            <strong>Plant-Based Universities</strong> is a student-led campaign that started at three UK
-                            universities in 2021. It asks universities to move to <strong>100% plant-based catering</strong>
-                            as a response to the climate and biodiversity crises. It has since spread across Europe.
-                            In Austria, the University of Graz moved to a fully plant-based canteen, and the University of Vienna
-                            committed to 70% plant-based catering.
+                            <strong>Plant-Based Universities</strong> is a student-led campaign calling for
+                            <strong>100% plant-based catering</strong> at universities. It started in the UK in 2021 and
+                            has since reached campuses across Europe, including Graz and Vienna.
                         </p>
                         <p>
-                            I coordinate the campaign at <strong>JKU Linz</strong>. We work with students, the student union
-                            and campus catering to make plant-based food the default on campus.
-                            If you study or work at JKU and want to get involved, get in touch.
+                            I coordinate the campaign at <strong>JKU Linz</strong>. If you study or work at JKU,
+                            sign up or get involved on our campaign page.
                         </p>
                         <div class="hero-actions">
-                            <a class="btn btn-primary" href="mailto:admin@darthalexus.com?subject=Plant-Based%20Universities%20JKU">Join us at JKU</a>
+                            <a class="btn btn-primary" href="https://plantbaseduniversities.org/jku-linz" target="_blank" rel="noopener">JKU Linz campaign ↗</a>
                             <a class="btn btn-ghost" href="https://plantbaseduniversities.org/" target="_blank" rel="noopener">plantbaseduniversities.org ↗</a>
                         </div>
                     </div>
@@ -338,24 +316,23 @@
             <div class="container">
                 <header class="section-head">
                     <span class="section-index mono">04</span>
-                    <h2>Chief Supervisor</h2>
+                    <h2>Jerry</h2>
                     <span class="section-rule" aria-hidden="true"></span>
                 </header>
 
                 <div class="jerry-grid">
                     <figure class="jerry-frame">
                         <img src="assets/img/jerry-loop.webp" alt="Jerry, a black cat with a pink collar, lounging on a fluffy blanket" width="360" height="480" loading="lazy">
-                        <figcaption class="mono">JERRY.EXE · 2007 — 2025</figcaption>
+                        <figcaption>Jerry · 2007 – 2025</figcaption>
                     </figure>
                     <div class="jerry-text">
-                        <p class="lead">Meet Jerry, my black cat and longest-serving colleague.</p>
+                        <p class="lead">Jerry, my black cat, was by my side for eighteen years.</p>
                         <p>
-                            For eighteen years Jerry supervised every exam, every line of code and every late-night
-                            training run, usually from the warmest spot on the keyboard. That pink collar might
-                            also explain this website's colour scheme.
+                            From school through university and into research, he was part of every chapter.
+                            His pink collar may also explain this website's colours.
                         </p>
                         <p class="muted">
-                            Jerry passed away in 2025 but still keeps watch over this site. Look closely and you'll find a few traces.
+                            Jerry passed away in 2025. He still watches over this site, so look closely and you'll find him.
                         </p>
                     </div>
                 </div>
@@ -367,7 +344,7 @@
             <div class="container contact-inner">
                 <p class="eyebrow mono">// OPEN CHANNEL</p>
                 <h2 class="contact-title">Let's build something<br><span class="chrome">in sync.</span></h2>
-                <p class="section-intro">Research collaborations, score following, robots or plant-based campuses: my inbox is open.</p>
+                <p class="section-intro">Research, collaborations or plant-based campuses: my inbox is open.</p>
                 <div class="hero-actions center">
                     <a class="btn btn-primary" href="mailto:admin@darthalexus.com">admin@darthalexus.com</a>
                     <a class="btn btn-ghost" href="https://github.com/darth-alexus" target="_blank" rel="noopener">GitHub ↗</a>
@@ -380,7 +357,7 @@
     <footer class="site-footer">
         <div class="container footer-inner mono">
             <span>&copy; <span id="year">2026</span> Alexander Neuhauser · DarthAlexus</span>
-            <span class="footer-note">Built by hand · supervised by Jerry</span>
+            <span class="footer-note">Built by hand · in memory of Jerry</span>
         </div>
         <img class="footer-jerry" src="assets/img/jerry-silhouette.png" alt="" width="342" height="520" aria-hidden="true">
     </footer>

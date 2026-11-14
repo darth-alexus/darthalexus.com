@@ -290,16 +290,6 @@ a:hover { color: #fff; }
 }
 .hud-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dashed var(--line-soft); }
 .hud-row span:first-child { color: var(--pink); }
-.eq { display: flex; align-items: flex-end; gap: 3px; height: 34px; margin-top: 12px; }
-.eq i {
-    flex: 1; background: linear-gradient(0deg, var(--pink), var(--magenta));
-    border-radius: 1px; height: 30%;
-    animation: eq 1s ease-in-out infinite alternate;
-}
-.eq i:nth-child(2n) { animation-duration: .7s; }
-.eq i:nth-child(3n) { animation-duration: 1.3s; }
-.eq i:nth-child(4n) { animation-duration: .55s; }
-.eq i:nth-child(5n) { animation-duration: .9s; animation-delay: -.3s; }
 
 /* ---------- Sections ---------- */
 .section { padding: 110px 0; position: relative; }
@@ -504,7 +494,7 @@ a:hover { color: #fff; }
     mix-blend-mode: screen;
 }
 .jerry-frame figcaption {
-    font-size: 0.68rem; letter-spacing: 0.16em; color: var(--pink); text-align: center; padding-top: 10px;
+    font-size: 0.9rem; color: var(--text-dim); text-align: center; padding-top: 10px;
 }
 .jerry-text { max-width: 560px; }
 .jerry-text p { color: var(--text-dim); }
@@ -540,7 +530,6 @@ a:hover { color: #fff; }
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 @keyframes twinkle { from { opacity: 0.55; } to { opacity: 1; } }
-@keyframes eq { from { height: 15%; } to { height: 100%; } }
 @keyframes progress { from { width: 28%; } to { width: 62%; } }
 
 /* ---------- Responsive ---------- */
