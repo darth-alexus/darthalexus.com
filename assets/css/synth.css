@@ -240,8 +240,14 @@ a:hover { color: #fff; }
 
 .hero-title {
     margin: 0; font-weight: 700; line-height: 0.95; letter-spacing: -0.02em;
-    font-size: clamp(3rem, 9vw, 6.8rem);
+    font-size: clamp(2.6rem, 7vw, 5.4rem);
 }
+.hero-repos {
+    margin: 26px 0 0; font-size: 0.8rem; color: var(--text-mute);
+    display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline;
+}
+.hero-repos a { color: var(--text-dim); border-bottom: 1px solid var(--line); text-decoration: none; }
+.hero-repos a:hover { color: var(--pink); border-color: var(--pink); }
 .hero-title .line { display: block; }
 
 .chrome {
@@ -519,11 +525,18 @@ a:hover { color: #fff; }
 .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .footer-jerry {
     position: absolute; right: 8%; bottom: 100%;
-    height: 84px; width: auto;
-    filter: drop-shadow(0 0 1px rgba(255, 95, 168, 0.9)) drop-shadow(0 0 8px rgba(255, 46, 136, 0.4));
-    transform: translateY(6px);
-    pointer-events: none;
+    transform: translateY(6px); outline: none; cursor: default;
 }
+.footer-jerry img {
+    display: block; height: 84px; width: auto;
+    filter: drop-shadow(0 0 1px rgba(255, 95, 168, 0.9)) drop-shadow(0 0 8px rgba(255, 46, 136, 0.4));
+}
+.jerry-tip {
+    position: absolute; right: 100%; bottom: 18px; margin-right: 10px;
+    white-space: nowrap; font-size: 0.72rem; color: var(--text-dim);
+    opacity: 0; transition: opacity .4s ease; pointer-events: none;
+}
+.footer-jerry:hover .jerry-tip, .footer-jerry:focus-visible .jerry-tip { opacity: 1; }
 
 /* ---------- Reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
