@@ -3,78 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerry</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Jerry · DarthAlexus</title>
+    <meta name="description" content="Jerry, my black cat, 2007 – 2025.">
+    <meta name="theme-color" content="#07050a">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/synth.css">
 </head>
-<body class="jerry-page">
-    <header>
-        <nav class="navbar">
-            <div class="nav-logo">
-                <a href="http://darthalexus.com">
-                    <img src="home.png" alt="Home" height="25" width="25">
-                    DarthAlexus
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="http://darthalexus.com">Home</a></li>
-                <li><a href="pianist/index.html">RoboPianist</a></li>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Main">
+            <a class="brand" href="index.html#top" aria-label="DarthAlexus, back to top">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-text">DARTH<span class="accent">ALEXUS</span></span>
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span class="sr-only">Menu</span>
+                <span class="bar"></span><span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#plant-based">Plant-Based</a></li>
                 <li><a href="jerry.html">Jerry</a></li>
-                <!--<li><a href="#connect">Connect</a></li>
-                <li><a href="#contact">Contact</a></li>-->
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/darth-alexus" class="nav-cta" target="_blank" rel="noopener">GitHub ↗</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main>
-        <section id="jerry" class="jerry-section">
-            <div class="jerry-content">
-                <!--<img src="jerry.png" alt="Profile Picture" class="profile-img">-->
-                
-                <!--<button id="toggleGif">Toggle GIF</button>
-                <img id="myGif" src="random.gif" alt="GIF" style="display: none;">-->
 
-                <!--<button id="showGif">Show GIF</button>
-                <div id="gifContainer"></div>
-
-                <script src="random_script.js"></script>-->
-                
-                <img src="jerry.gif" alt="GIF" class="jerry-gif"><!-- class="profile-img">-->
-                
-                <div class="jerry-text">
-                    <h3>RIP</h3>
-                    <p>Jerry<br>
-                        2007 - 2025 <br>
-                    </p>
+    <main id="main">
+        <section class="section jerry-page">
+            <div class="container">
+                <div class="jerry-grid">
+                    <figure class="jerry-frame">
+                        <img src="assets/img/jerry-loop.webp" alt="Jerry, a black cat, lounging on a fluffy blanket" width="360" height="480">
+                        <figcaption>Jerry · 2007 – 2025</figcaption>
+                    </figure>
+                    <div class="jerry-text">
+                        <h1>Jerry</h1>
+                        <p class="muted">Jerry passed away in 2025. He still watches over this site, so look closely and you'll find him.</p>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <!--<section id="connect" class="connect-section">
-            <div class="social-links">
-                
-                <a href="http://open.spotify.com/user/1132953857" target="_blank">
-                    <img src="spotify_logo.png" alt="Spotify" class="social-icon">
-                </a>
-                <a href="http://github.com/DarthAlexus96" target="_blank">
-                    <img src="github.png" alt="GitHub" class="social-icon">
-                </a>
-                <a href="https://www.sololearn.com/Profile/7072030" target="_blank">
-                    <img src="sololearn.png" alt="SoloLearn" class="social-icon">
-                </a>
-                <a href="https://www.deviantart.com/darthalexus" target="_blank">
-                    <img src="deviant.png" alt="DeviantArt" class="social-icon">
-                </a>
-            </div>
-        </section>-->
     </main>
-    
-    <footer id="contact" class="footer">
-        <p>Contact: <a href="mailto:admin@darthalexus.com">admin@darthalexus.com</a></p>
-    </footer>
-    
-    
-    <script src="rain.js"></script>
 
+    <footer class="site-footer">
+        <div class="container footer-inner mono">
+            <span>&copy; <span id="year">2026</span> Alexander Neuhauser · DarthAlexus</span>
+            <span class="footer-note">Built by hand · in memory of Jerry</span>
+        </div>
+        <img class="footer-jerry" src="assets/img/jerry-silhouette.png" alt="" width="342" height="520" aria-hidden="true">
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

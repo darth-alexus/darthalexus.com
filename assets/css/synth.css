@@ -507,6 +507,9 @@ a:hover { color: #fff; }
     font-size: 0.9rem; color: var(--text-dim); text-align: center; padding-top: 10px;
 }
 .jerry-text { max-width: 560px; }
+.jerry-page { min-height: calc(100vh - 160px); display: grid; place-items: center; padding: 140px 0 120px; }
+.jerry-page .jerry-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 32px; }
+.jerry-page h1 { margin: 0 0 12px; font-size: clamp(2.4rem, 6vw, 3.6rem); letter-spacing: -0.02em; }
 .jerry-text p { color: var(--text-dim); }
 .jerry-text p.lead { color: var(--text); }
 
@@ -525,18 +528,11 @@ a:hover { color: #fff; }
 .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .footer-jerry {
     position: absolute; right: 8%; bottom: 100%;
-    transform: translateY(6px); outline: none; cursor: default;
-}
-.footer-jerry img {
-    display: block; height: 84px; width: auto;
+    height: 84px; width: auto;
     filter: drop-shadow(0 0 1px rgba(255, 95, 168, 0.9)) drop-shadow(0 0 8px rgba(255, 46, 136, 0.4));
+    transform: translateY(6px);
+    pointer-events: none;
 }
-.jerry-tip {
-    position: absolute; right: 100%; bottom: 18px; margin-right: 10px;
-    white-space: nowrap; font-size: 0.72rem; color: var(--text-dim);
-    opacity: 0; transition: opacity .4s ease; pointer-events: none;
-}
-.footer-jerry:hover .jerry-tip, .footer-jerry:focus-visible .jerry-tip { opacity: 1; }
 
 /* ---------- Reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
